@@ -74,11 +74,9 @@ function randomTrack(){
 }
 function playRandom(){
     isRandom = true;
-    randomIcon.classList.add('randomActive');
 }
 function pauseRandom(){
     isRandom = false;
-    randomIcon.classList.remove('randomActive');
 }
 function repeatTrack(){
     let current_index = track_index;
@@ -91,13 +89,11 @@ function playpauseTrack(){
 function playTrack(){
     curr_track.play();
     isPlaying = true;
-    track_art.classList.add('rotate');
     playpause_btn.innerHTML = '<i class="fa-solid fa-pause"></i>';
 }
 function pauseTrack(){
     curr_track.pause();
     isPlaying = false;
-    track_art.classList.remove('rotate');
     playpause_btn.innerHTML = '<i class="fa-solid fa-play"></i>';
 }
 function nextTrack(){
