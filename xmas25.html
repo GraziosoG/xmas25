@@ -11,28 +11,37 @@
 <body>
     <div class="container">
         <div class="music-player">
-            <nav>
-                <div class="circle">
-                    <i class="fa-solid fa-angle-left"></i>
-                </div>
-                <div class="circle">
-                    <i class="fa-solid fa-bars"></i>
-                </div>
-            </nav>
-            <img src="media/xmas-tree-night.jpg" class="song-img">
-            <h1>Winter Wonderland</h1>
-            <audio id="song">
-                <source src="media/Winter Wonderland.mp3" type="audio/mpeg">
-            </audio>
 
-            <input type="range" value="0" id="progress">
+            <div class="details">
+                <div class="now-playing">PLAYING x OF y</div>
+                <div class="track-art"></div>
+                <div class="track-name">Track Name</div>
+            </div>
+
+            <div class="slider_container">
+                <div class="current-time">00:00</div>
+                 <input type="range" min="1" max="100" value="0" class="seek_slider" onchange="seekTo()">
+                 <div class="total-duration">00:00</div>
+            </div>
+
+            <div class="slider_container">
+                <i class="fa fa-volume-down"></i>
+                 <input type="range" min="1" max="100" value="50" class="volume_slider" onchange="setVolume()">
+                 <i class="fa fa-volume-up"></i>
+            </div>
+            
+            <!-- <audio id="song">
+                <source src="media/Winter Wonderland.mp3" type="audio/mpeg">
+            </audio> -->
+
+            <!-- <input type="range" value="0" id="progress"> -->
 
             <div class="controls">
-                <div><i class="fa-solid fa-shuffle"></i></div>
-                <div><i class="fa-solid fa-backward"></i></div>
-                <div><i class="fa-solid fa-play" id="ctrlIcon" onclick="playPause()"></i></div>
-                <div><i class="fa-solid fa-forward"></i></div>
-                <div><i class="fa-solid fa-repeat"></i></div>
+                <div class="random-track" onclick="randomTrack()"><i class="fa-solid fa-shuffle"></i></div>
+                <div class="prev-track" onclick="prevTrack()"><i class="fa-solid fa-backward"></i></div>
+                <div class="playpause-track" onclick="playpauseTrack()"><i class="fa-solid fa-play" id="ctrlIcon"></i></div>
+                <div class="next-track" onclick="nextTrack()"><i class="fa-solid fa-forward"></i></div>
+                <div class="repeat-track" onclick="repeatTrack()"><i class="fa-solid fa-repeat"></i></div>
             </div>
 
         </div>

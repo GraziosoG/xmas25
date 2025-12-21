@@ -26,49 +26,54 @@
 
 .music-player{
     background: var(--primary-brown);
-    width: 400px;
+    width: 40%;
     padding: 25px 35px;
     text-align: center;
-    border-radius: 10%;
+    border-radius: 5%;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
 
-nav{
+@media all and (max-width: 1023px) {
+    .music-player {
+      width: 90%; /* Overrides the desktop width on mobile */
+    }
+}
+
+.details {
     display: flex;
-    justify-content: space-between;
-    margin-bottom: 30px;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    color: #ddd;
 }
 
-nav .circle{
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
-    background: var(--icon-bg-color);
-    color: var(--primary-dark-green);
-    box-shadow: 0 5px 10px rgba(64, 54, 37, 0.2);
+.track-name{
+    font-size: 20px;
+    font-weight: 700;
+    margin: 15px 0;
 }
 
-.song-img{
-    width: 220px;
+.track-art{
+    margin: 25px;
+    height: 250px;
+    width: 250px;
     border-radius: 50%;
-    border: 8px solid #ddd;
+    border: 2px solid #ddd;
+    background-size: cover;
+    background-position: center;
     box-shadow: 0 10px 60px rgba(64, 54, 37, 0.2);
 }
 
-.music-player h1{
-    font-size: 20px;
-    font-weight: 700;
-    color: #ddd;
-    margin-top: 20px;
+.slider_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
 }
 
-.music-player p{
-    font-size: 14px;
-    color: #ddd;
-}
-
-#progress{
+.seek_slider, .volume_slider{
     -webkit-appearance: none;
+    appearance: none;
     width: 100%;
     height: 6px;
     background: var(--primary-dark-green);
@@ -77,20 +82,39 @@ nav .circle{
     margin: 40px 0;
 }
 
-#progress::-webkit-slider-thumb{
+.seek_slider::-webkit-slider-thumb, .volume_slider::-webkit-slider-thumb{
     -webkit-appearance: none;
     background: var(--primary-dark-green);
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
-    border: 8px solid var(--icon-bg-color);
+    border: 5px solid var(--icon-bg-color);
     box-shadow: 0 5px 5px rgba(64, 54, 37, 0.2);
+    cursor: grab;
+}
+
+.seek_slider {
+    width: 60%;
+}
+    
+.volume_slider {
+    width: 30%;
+}
+    
+.current-time, .total-duration {
+    padding: 10px;
+}
+    
+i.fa-volume-down,i.fa-volume-up {
+    padding: 10px;
 }
 
 .controls{
     display: flex;
-    justify-content: center;
+    flex-direction: row;
     align-items: center;
+    justify-content: center;
+    margin: 15px;
 }
 
 .controls div{
@@ -105,6 +129,12 @@ nav .circle{
     color: var(--primary-dark-green);
     box-shadow: 0 10px 20px rgba(64, 54, 37, 0.2);
     cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+.controls div:hover{
+    opacity: 1.0;
 }
 
 .controls div:nth-child(3){
