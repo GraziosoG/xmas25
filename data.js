@@ -21,7 +21,7 @@ window.music_list = [
     }, 
     {
         name: "We Wish You a Merry Christmas",
-        img: "tree.jpg",
+        img: "big_ornament.jpg",
         audio: "We-Wish-You-a-Merry-Christmas.mp3"
     }
 ];
