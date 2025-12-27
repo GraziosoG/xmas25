@@ -17,34 +17,7 @@ let track_index = 0;
 let isPlaying = false;
 let isRandom = false;
 let updateTimer;
-
-const music_list = [
-    {
-        name: "Winter Wonderland",
-        img: "multiple-trees.jpg",
-        audio: "Winter-Wonderland.mp3"
-    }, 
-    {
-        name: "Have a Holly Jolly Christmas",
-        img: "giftbox.jpg",
-        audio: "Holly-Jolly-Chirstmas.mp3"
-    }, 
-    {
-        name: "Let it Snow",
-        img: "car.jpg",
-        audio: "Let-It-Snow.mp3"
-    }, 
-    {
-        name: "White Christmas",
-        img: "xmas-tree-night.jpg",
-        audio: "White-Christmas.mp3"
-    }, 
-    {
-        name: "We Wish You a Merry Christmas",
-        img: "tree.jpg",
-        audio: "We-Wish-You-a-Merry-Christmas.mp3"
-    }
-];
+let music_list = window.music_list;
 
 loadTrack(track_index);
 

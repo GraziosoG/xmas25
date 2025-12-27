@@ -1,4 +1,4 @@
-export const music_list = [
+window.music_list = [
     {
         name: "Winter Wonderland",
         img: "multiple-trees.jpg",
